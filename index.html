@@ -176,6 +176,23 @@
             color: #333;
         }
 
+        .couple-image {
+            display: block;
+            max-width: 474px;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border: 4px solid #ffd700;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(180, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .couple-image {
+                border-width: 2px;
+            }
+        }
+
         .countdown {
             display: flex;
             justify-content: center;
@@ -224,6 +241,7 @@
         <div class="header">
             <h1 class="title">Smit &amp; Dr.Henal</h1>
         </div>
+        <img src="images/SH-img.png" alt="Smit and Dr.Henal" class="couple-image">
         <div class="countdown">
                 <div class="countdown-item">
                     <div class="countdown-number" id="days">00</div>
