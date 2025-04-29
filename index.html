@@ -3,305 +3,495 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr and Mrs Patel </title>
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cormorant+Garamond:wght@400;600&family=Pinyon+Script&family=Playfair+Display:wght@400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <title>SmithTech Consulting | IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: #ffffff;
+        /* Base Styles */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #64748b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --white: #ffffff;
+        }
+
+        * {
             margin: 0;
-            padding: 0px 20px 0px 10px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        .invitation-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(180, 0, 0, 0.1);
-            border: 8px solid #ffd700;
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .invitation-container {
-                margin: 10px;
-                padding: 15px;
-                border-width: 4px;
-            }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
+        section {
+            padding: 60px 0;
         }
 
-        .title {
-            font-family: 'Berkshire Swash', cursive;
-            font-size: 62px;
-            color: #b40000;
-            margin-bottom: 30px;
-            line-height: 1.4;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(180, 0, 0, 0.2);
-            position: relative;
-            padding: 20px 0;
-        }
-        
-        .title::before,
-        .title::after {
-            content: "❦";
-            font-size: 32px;
-            color: #ffd700;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .title::before {
-            top: -10px;
-        }
-        
-        .title::after {
-            bottom: -10px;
-        }
-
-        @media (max-width: 768px) {
-            .title {
-                font-size: 36px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .days-to-go {
-            font-size: 18px;
-            color: #b40000;
-        }
-
-        .couple-names {
-            font-family: 'Lora', serif;
-            font-size: 32px;
-            color: #b40000;
-            text-align: center;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .event-details {
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(180, 0, 0, 0.1);
-            border: 8px solid #ffd700;
-        }
-
-        .event-details h3 {
-            font-family: 'Berkshire Swash', cursive;
-            font-size: 28px;
-            font-weight: 400;
-            color: #b40000;
+        h1, h2, h3 {
             margin-bottom: 20px;
-            padding: 12px;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(180, 0, 0, 0.2);
-            position: relative;
+            font-weight: 700;
         }
 
-        .event-details h3:first-of-type::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #b40000, transparent);
+        p {
+            margin-bottom: 20px;
         }
 
-        .event-details h3:last-of-type::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #b40000, transparent);
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
 
-        .event-details h4 {
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--white);
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
             font-size: 20px;
-            color: #ffffff;
-            margin-bottom: 10px;
-            background-color: #b40000;
-            padding: 8px;
-            border-radius: 5px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: var(--secondary);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
             display: inline-block;
         }
 
-        .event-details p {
-            font-family: 'Lora', serif;
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 12px;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        @media (max-width: 768px) {
-            .event-details {
-                padding: 15px;
-                margin: 10px auto;
-                border-width: 4px;
-            }
-
-            .event-details h3 {
-                font-size: 22px;
-                margin-bottom: 15px;
-                padding: 8px;
-            }
-
-            .event-details h4 {
-                font-size: 18px;
-                padding: 6px;
-            }
-
-            .event-details p {
-                font-size: 16px;
-                margin-bottom: 8px;
-            }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .venue-details {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: var(--primary);
+            color: var(--white);
             text-align: center;
-            margin-top: 30px;
-            border: 1px solid #ffd700;
+            padding: 80px 0;
         }
 
-        .venue-details p {
-            font-size: 18px;
-            color: #333;
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
-        .couple-image {
-            display: block;
-            max-width: 474px;
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn-light {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background-color: var(--light);
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
             width: 100%;
-            height: auto;
-            margin: 20px auto;
-            border: 4px solid #ffd700;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(180, 0, 0, 0.1);
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
         }
 
-        @media (max-width: 768px) {
-            .couple-image {
-                border-width: 2px;
-            }
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
 
-        .countdown {
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
             flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
         }
 
-        .countdown-item {
-            background-color: #ffffff;
-            border: 2px solid #ffd700;
-            box-shadow: 0 2px 6px rgba(180, 0, 0, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            min-width: 70px;
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            color: var(--gray);
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
             text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .countdown {
-                gap: 10px;
-            }
-            
-            .countdown-item {
-                padding: 10px;
-                min-width: 60px;
-            }
-        }
-
-        .countdown-number {
-            font-size: 24px;
-            font-weight: 600;
-            color: #b40000;
-        }
-
-        .countdown-label {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
             font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: bold;
+        }
+
+        /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--white);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="invitation-container">
-        <div class="header">
-            <h1 class="title">Mr and Mrs Patel</h1>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="SmithTech.html" class="logo"><i class="fas fa-code"></i>SmithTech</a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
         </div>
-        <img src="images/SH-img.png" alt="Mr and Mrs Patel" class="couple-image">
-        <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">00</div>
-                    <div class="countdown-label">Days</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Innovative IT Solutions for Modern Business</h1>
+            <p>We help businesses transform through technology with custom software solutions, cloud migration, and strategic IT consulting.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions designed specifically for your business needs and challenges.</p>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Seamless cloud migration and management to improve scalability and reduce costs.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p>SmithenalTech Consulting is a team of experienced IT professionals dedicated to helping businesses leverage technology for growth and innovation. With over 10 years in the industry, we've helped companies across various sectors transform their operations through strategic technology implementation.</p>
+                <p>Our approach combines technical expertise with a deep understanding of business processes, ensuring solutions that not only solve technical challenges but also contribute to your overall business success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Schedule a free consultation with our team to discuss how we can help you achieve your technology goals.</p>
+        </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>SmithTech Consulting</h3>
+                    <p>Providing innovative IT solutions to help businesses grow and succeed in the digital age.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li>Custom Software Development</li>
+                        <li>Cloud Solutions</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> hello@smithenal@com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SmithTech Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+   
     <script>
-        // Set the wedding date (December 24, 2024 4:30 PM IST)
-        const weddingDate = new Date('2024-12-24T16:30:00+05:30').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = weddingDate - now;
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-            if (timeLeft < 0) {
-                clearInterval(countdownTimer);
-                document.querySelector('.countdown').innerHTML = '';
-            }
-        }
-
-        // Update the countdown every second
-        const countdownTimer = setInterval(updateCountdown, 1000);
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
         
-        // Initial call to avoid delay
-        updateCountdown();
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
     </script>
 </body>
 </html>
